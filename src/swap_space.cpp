@@ -1,4 +1,4 @@
-#include "swap_space.hpp"
+#include <swap_space.hpp>
 
 void serialize(std::iostream &fs, serialization_context &context, uint64_t x)
 {
@@ -22,6 +22,21 @@ void deserialize(std::iostream &fs, serialization_context &context, int64_t &x)
 {
   fs >> x;
   assert(fs.good());
+}
+
+void serialize(std::iostream &fs, serialization_context &context, void *x)
+{
+    fs << x << " ";
+    assert(fs.good());
+}
+
+void deserialize(std::iostream &fs, serialization_context &context, void **x)
+{
+    std::string dummy;
+  	std::string::size_type sz = 0;	
+		fs >> dummy;
+    *x = reinterpret_cast<void *>(std::stoull(dummy, &sz, 0));
+		assert(fs.good());
 }
 
 void serialize(std::iostream &fs, serialization_context &context, std::string x)

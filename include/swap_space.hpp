@@ -108,6 +108,9 @@ void deserialize(std::iostream &fs, serialization_context &context, int64_t &x);
 void serialize(std::iostream &fs, serialization_context &context, std::string x);
 void deserialize(std::iostream &fs, serialization_context &context, std::string &x);
 
+void serialize(std::iostream &fs, serialization_context &context, void *x);
+void deserialize(std::iostream &fs, serialization_context &context, void **x);
+
 template<class Key, class Value> void serialize(std::iostream &fs,
 						serialization_context &context,
 						std::map<Key, Value> &mp)

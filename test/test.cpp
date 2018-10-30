@@ -13,7 +13,7 @@
 #include <sys/types.h>
 #include <sys/time.h>
 #include <unistd.h>
-#include "betree.hpp"
+#include <betree.hpp>
 
 void timer_start(uint64_t &timer)
 {
