@@ -23,11 +23,11 @@ Let `Keys` be the set of all possible keys and `Values` be the set of all possib
 
 ### `Map`
 
-* `Map: Values x Parametes -> Values`
+* `Map: Values x Parameters -> Values`
 
 ### `Fold`
 
-* `Fold: Values -> Values`
+* `Fold: Values x Values -> Values`
 
 ### `k`
 
